@@ -18,11 +18,27 @@ GET        /taskList1                                    controllers.TaskList1.t
 GET        /logout1                                      controllers.TaskList1.logout   
 POST       /addTask1                                     controllers.TaskList1.addTask  
 POST       /deleteTask1                                  controllers.TaskList1.deleteTask  
+
+# Routes for version 3
+GET        /load3                                        controllers.TaskList3.load
+POST	   /validate3						             controllers.TaskList3.validate
+POST	   /create3						                 controllers.TaskList3.createUser
+GET 	   /taskList3						             controllers.TaskList3.taskList
+POST	   /addTask3						             controllers.TaskList3.addTask
+POST	   /deleteTask3					                 controllers.TaskList3.delete
+GET        /logout3						                 controllers.TaskList3.logout
+
+# Routes for version 4
+GET        /load4                                       controllers.TaskList4.load
+
+# Routes for websocket
+GET        /chat                                         controllers.WebSocketChat.index
+GET        /chatSocket                                   controllers.WebSocketChat.socket
+
+
+
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                                 controllers.Assets.at(file)
 GET        /versionedAssets/*file                        controllers.Assets.versioned(path="/public", file: Asset)
 
 
-# Routes for websocket
-GET        /chat                                         controllers.WebSocketChat.index
-GET        /chatSocket                                   controllers.WebSocketChat.socket
